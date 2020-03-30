@@ -1,0 +1,51 @@
+.sticky-nav-tool-bar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+    background-color: #e2e8f0;
+}
+
+.nav-tool-bar-end {
+    float: right;
+    padding-right: 24px;
+}
+
+.example-fill-remaining-space {
+/* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.name-padding {
+    padding-left: 16px;
+}
+
+.company-name {
+    color: #F44336 !important;
+    font-family: Allerta Stencil Std, fantasy;
+    font-weight: bold 900;
+}
+
+.mat-toolbar.mat-primary {
+    background: #3f51b5;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 0px 8px 0px rgba(0,0,0,.6);
+}
+
+.nav-item-link {
+    text-decoration: none ;
+    margin-left: 24px;
+    color: inherit;
+}
+
+.nav-bar-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+@media screen and (max-width: 1024px) {
+    .fadeshow { display: none !important; }
+}

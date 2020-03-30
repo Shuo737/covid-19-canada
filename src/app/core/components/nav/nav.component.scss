@@ -1,0 +1,34 @@
+.example-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.sidenav-list-container {
+    max-width: 400px;
+}
+
+.company-name-center-align {
+    display: contents;
+}
+
+.sidenav-container {
+    z-index: -1 !important;
+}
+
+.nav-item-link {
+    text-decoration: none ;
+    color: inherit;
+}
+
+.img-container {
+    max-height: 200px;
+}
+
+.company-name {
+    color: #F44336 !important;
+    font: 500 30px/32px Brush Script MT, Brush Script Std, cursive
+}

@@ -1,0 +1,180 @@
+table {
+    min-width: 800px;
+}
+
+table th {
+    font-size: 18px;
+    color: black;
+}
+
+table td {
+    font-size: 14px;
+    color: gray
+}
+
+th.mat-column-cases, td.mat-column-cases {
+    padding-left: 16px;
+}
+
+th.mat-column-source, td.mat-column-source {
+    padding-left: 16px;
+}
+
+.mat-table-sticky:first-child {
+border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+border-left: 1px solid #e0e0e0;
+}
+
+.page-content {
+    padding: 24px;
+}
+
+.mat-card {
+    transition: none !important;
+    box-shadow: none !important;
+    background-color: #fafafa;
+}
+
+h2:before {
+    content:"• ";
+    margin-left: -24px;
+}
+
+.card-style {
+    max-width: 1200px;
+    padding: 0px !important;
+    margin: 24px auto;
+}
+
+.card-title {
+    font-size: 32px;
+    color: #00aad1;
+    font: bold 32px/36px Palatino, URW Palladio L, serif;
+    padding-left: 0px !important;
+}
+
+.card-content {
+    font-size: 16px;
+    color: #878787;
+}
+
+.company-title-background {
+    color: white;
+    background-image: url("../../../../assets/images/coronavirus-china-app-796x448.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+.home-img-content {
+    background-image: url("../../../../assets/images/coronavirus-china-app-796x448.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    min-height: 400px;
+}
+
+.company-title-content {
+    min-height: 600px;
+    padding: 48px 24px 48px 24px;
+    text-align: center;
+}
+
+.company-name {
+    padding: 24px;
+    margin: auto !important;
+    font-size: 40px;
+    font: bold 40px/40px Times, Times New Roman, serif
+}
+
+.logo-img {
+    padding: 24px 0px 0px 0px;
+    margin-right: 24px !important;
+    margin-left: 0px;
+    float: left;
+    max-width: 450px;
+    max-height: 300px;
+    opacity: 0.9;
+}
+
+.company-debrief {
+    display: inline-flex;
+    padding-top: 16px;
+}
+.company-debrief .h1{
+    font-size: 40px;
+}
+
+.debrief-div  {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.debrief-string {
+    color: #616161;
+    text-align: center;
+    padding: 24px;
+    font-size: 16px;
+}
+
+.tagline {
+    margin: 0.5em 0 1em;
+    font-size: 16px;
+    text-align: center;
+}
+
+.demo-button {
+    padding-top: 40px;
+}
+
+.sticky-bot-footer {
+    background-color: #3c3a3a;
+    color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.company-footer-name {
+    font: 500 30px/32px Brush Script MT, Brush Script Std, cursive
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+        Every toolbar row uses a flexbox row layout. */
+        flex: 1 1 auto;
+}
+
+.update-text {
+    font-size: 18px;
+    margin: 16px;
+    vertical-align: middle;
+    color: #FFEB3B
+}
+
+.country-summary-card {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 18px 36px;
+}
+
+.confirmed-title-color {
+    color: #FF6F00
+}
+
+.Infected-title-color {
+    color: #03A9F4
+}
+
+.death-title-color {
+    color: #E53935
+}

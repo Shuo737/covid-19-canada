@@ -1,0 +1,26 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav role="side" class="sidenav-list-container">
+        <mat-list>
+            <mat-list-item><h2 class="company-name-center-align company-name"> Super GeoAI </h2></mat-list-item>
+            <mat-divider></mat-divider>
+            <img mat-card-image [src]="debriefPhotoPath" class="img-container">
+
+            <mat-list-item><a [routerLink]="homeUrl" class="nav-item-link"><mat-icon matListIcon>home</mat-icon>Home</a></mat-list-item>
+            <mat-list-item><a [routerLink]="solutionsUrl" class="nav-item-link"><mat-icon matListIcon>apps</mat-icon>Solutions & Products</a></mat-list-item>
+            <mat-list-item><a [routerLink]="clientsUrl" class="nav-item-link"><mat-icon matListIcon>people_alt</mat-icon>Clients & Partners</a></mat-list-item>
+            <mat-list-item><a [routerLink]="about" class="nav-item-link"><mat-icon matListIcon>info</mat-icon>About</a></mat-list-item>
+
+            <mat-divider></mat-divider>
+            <mat-list-item><mat-icon matListIcon>search</mat-icon>Search</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>supervisor_account</mat-icon>Sign In</mat-list-item>
+        </mat-list>
+        
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-container">
+        <app-navigation-bar
+            (toggleSidenav)="sidenav.toggle()">
+        </app-navigation-bar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
