@@ -1,0 +1,47 @@
+<table mat-table [dataSource]="individualTableDataSource">
+    <!-- Number Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+    </ng-container>
+
+    <!-- Province Column -->
+    <ng-container matColumnDef="province">
+      <th mat-header-cell *matHeaderCellDef> Province </th>
+      <td mat-cell *matCellDef="let element"> {{ element.province }} </td>
+    </ng-container>
+
+    <!-- City Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{ element.city }} </td>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{ element.age }} </td>
+    </ng-container>
+
+    <!-- Travel History Column -->
+    <ng-container matColumnDef="travelHistory">
+      <th mat-header-cell *matHeaderCellDef> Travel History </th>
+      <td mat-cell *matCellDef="let element"> {{ element.travelHistory }}</td>
+    </ng-container>
+
+    <!-- Confirmed or Presumptive Column -->
+    <ng-container matColumnDef="confirmedPresumptive">
+      <th mat-header-cell *matHeaderCellDef> Confirmed / Presumptive </th>
+      <td mat-cell *matCellDef="let element"> {{ element.confirmedPresumptive }}</td>
+    </ng-container>
+
+    <!-- Travel History Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{ formatDateString(element.date) }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="individualTableDisplayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: individualTableDisplayColumns;"></tr>
+  </table>
+  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10, 50, 100]" showFirstLastButtons></mat-paginator>

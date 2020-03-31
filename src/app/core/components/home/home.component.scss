@@ -1,5 +1,5 @@
 table {
-    min-width: 800px;
+    min-width: 1200px;
 }
 
 table th {
@@ -12,11 +12,12 @@ table td {
     color: gray
 }
 
-th.mat-column-cases, td.mat-column-cases {
-    padding-left: 16px;
-}
-
-th.mat-column-source, td.mat-column-source {
+th.mat-column-province, td.mat-column-province,
+th.mat-column-cases, td.mat-column-cases,
+th.mat-column-city, td.mat-column-city,
+th.mat-column-source, td.mat-column-source,
+th.mat-column-travelHistory, td.mat-column-travelHistory
+th.mat-column-date, td.mat-column-date {
     padding-left: 16px;
 }
 

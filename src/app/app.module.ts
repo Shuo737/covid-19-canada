@@ -9,6 +9,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -23,7 +28,10 @@ import { MatIconModule } from '@angular/material/icon';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

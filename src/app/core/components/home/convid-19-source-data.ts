@@ -150,6 +150,7 @@ export class Covid19SourceData {
             age: d.age,
             travelHistory: d.travel_history,
             confirmedPresumptive: d.confirmed_presumptive,
+            source: d.source,
             date: new Date(d.date)
         } as IndividualCases));
     }

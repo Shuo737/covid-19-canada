@@ -1,4 +1,4 @@
-<div *ngIf='(covid19SourceData | async) as data'>
+<div *ngIf='(covid19SourceData$ | async) as data'>
 <header class="company-title-background">
     <div class="company-title-content debrief-div">
       <div>
@@ -8,6 +8,7 @@
                 <p class="update-text">({{ data.lastUpdate }})</p>
             </h1>
         </div>
+        <!-- Canada Summary -->
         <div class="debrief-div">
           <mat-card class="country-summary-card">
             <mat-card-header>
@@ -42,12 +43,13 @@
       </div>
     </div>
 </header> 
+<!-- Province data table -->
 <div class="page-content debrief-div">
   <div>
     <mat-card class="card-style">
       <mat-card-header>
         <mat-card-title>
-          <h2 class="card-title"><i>Summary By Province</i></h2>
+          <h2 class="card-title"><i>Summary Table By Province</i></h2>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content class="card-content">
@@ -85,26 +87,28 @@
     </mat-card>
   </div>
 </div>
-<div class="home-img-content debrief-div"></div>
+<!-- Individual data table -->
 <div class="page-content debrief-div">
   <div>
     <mat-card class="card-style">
       <mat-card-header>
         <mat-card-title>
-          <h2 class="card-title"><i>What is GeoAI technology?</i></h2>
+          <h2 class="card-title"><i>Summary Table By Individual</i></h2>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content class="card-content">
-        <p>
-          Spatial data contains geographic components that can identify locations (e.g., coordinates, addresses, postal codes) or can indicate geographically referenced features and conditions, such as the population of a community; the livestock, crops, and watershed of a region; the number of vehicles passing a road intersection; geotagged social media data. As geospatial technology is concerned with the collection, distribution, storage, analysis, processing, management, and presentation of spatial data, it encompasses geographic information systems (GIS), remote sensing (RS), global positioning systems (GPS), and cartography.
-          <br><br>
-          Artificial intelligence (AI) refers to a range of approaches and applications whereby computers are trained to simulate intelligent human behavior. AI systems can process and learn from vast amounts of data that would be impossible for humans to handle. Data mining (acquiring knowledge to iteratively extract information and learn from patterns in raw data) and deep learning (which allows computers to simulate brain functions) form the foundation of GeoAI.
-          <br><br>
-          GeoAI tools and applications aim to utilize all these methods as relevant to obtain valuable information and knowledge from spatial big data for specific analytical needs. Such GeoAI tools and software have been developed and applied in different domains and contexts, including for the military, commercial businesses, and public and civic sectors.
-        </p>
+        <div>
+          <app-individual-table
+            [tableData]='data.individualCases'
+          ></app-individual-table>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
+</div>
+
+<div class="page-content debrief-div">
+  
 </div>
 <footer>
   <mat-toolbar class="sticky-bot-footer">

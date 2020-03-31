@@ -14,6 +14,7 @@ import { ProductsSolutionsModule } from './components/products_solutions/product
 import { ClientsPartnersModule } from './components/clients-partners/clients-partners.module';
 import { AboutModule } from './components/about/about.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { IndividualTableModule } from './components/individual-table/individual-table.module';
 
 
 @NgModule({
@@ -28,10 +29,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatSidenavModule,
     RouterModule,
+    IndividualTableModule,
     HomeModule,
     ProductsSolutionsModule,
     ClientsPartnersModule,
-    AboutModule
+    AboutModule,
   ],
   exports: [NavigationBarComponent, NavComponent]
 })
