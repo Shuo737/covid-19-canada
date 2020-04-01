@@ -22,7 +22,7 @@ export class IndividualTableComponent implements OnInit, AfterViewInit {
     constructor() {}
 
     ngOnInit(): void {
-        this.individualTableDataSource = new MatTableDataSource<IndividualCases>(this.tableData)
+        this.individualTableDataSource = new MatTableDataSource<IndividualCases>(this.tableData);
     }
 
     ngAfterViewInit(): void {

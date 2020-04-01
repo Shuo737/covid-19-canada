@@ -1,21 +1,20 @@
-<div *ngIf='(covid19SourceData$ | async) as data'>
 <header class="company-title-background">
     <div class="company-title-content debrief-div">
       <div>
         <div class="debrief-div">
             <h1 class="company-name">
                 <i>COVID-19 In Canada </i>
-                <p class="update-text">({{ data.lastUpdate }})</p>
+                <p class="update-text" *ngIf="(lastUpdate$ | async) as lastUpdate">({{ lastUpdate }})</p>
             </h1>
         </div>
         <!-- Canada Summary -->
-        <div class="debrief-div">
+        <div class="debrief-div" *ngIf="(totalCases$ | async) as totalCases">
           <mat-card class="country-summary-card">
             <mat-card-header>
               <mat-card-title class="confirmed-title-color">Total Cases</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <h1 class="company-name"> {{ data.totalCases.cases }} </h1>
+              <h1 class="company-name"> {{ totalCases.cases }} </h1>
             </mat-card-content>
           </mat-card>
           <mat-card class="country-summary-card">
@@ -23,7 +22,7 @@
               <mat-card-title class="Infected-title-color">Infected Per Population (100,000)</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <h1 class="company-name"> {{ (data.totalCases.cases / data.casePerPopulation.Canada).toFixed(2) }} </h1>
+              <h1 class="company-name" *ngIf="(casePerPopulation$ | async) as casePerPopulation"> {{ (totalCases.cases / casePerPopulation.Canada).toFixed(2) }} </h1>
             </mat-card-content>
           </mat-card>
           <mat-card class="country-summary-card">
@@ -31,7 +30,7 @@
               <mat-card-title class="death-title-color">Total Death Cases</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <h1 class="company-name"> {{ data.totalCases.death }} </h1>
+              <h1 class="company-name"> {{ totalCases.death }} </h1>
             </mat-card-content>
           </mat-card>
         </div>
@@ -45,7 +44,7 @@
 </header> 
 <!-- Province data table -->
 <div class="page-content debrief-div">
-  <div>
+  <div *ngIf="(totalCaseProvince$ | async) as totalCaseProvince">
     <mat-card class="card-style">
       <mat-card-header>
         <mat-card-title>
@@ -53,7 +52,7 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content class="card-content">
-        <table mat-table [dataSource]="data.totalCaseProvince">
+        <table mat-table [dataSource]="totalCaseProvince">
           <!-- Position Column -->
           <ng-container matColumnDef="province" sticky>
             <th mat-header-cell *matHeaderCellDef> Province </th>
@@ -76,7 +75,7 @@
           <ng-container matColumnDef="source" stickyEnd>
             <th mat-header-cell *matHeaderCellDef> Source </th>
             <td mat-cell *matCellDef="let element">
-              <a href="element.source">Source</a>
+              <a [attr.href]="element.source">Source</a>
             </td>
           </ng-container>
 
@@ -89,7 +88,7 @@
 </div>
 <!-- Individual data table -->
 <div class="page-content debrief-div">
-  <div>
+  <div *ngIf="(individualCases$ | async)?.length !== 0">
     <mat-card class="card-style">
       <mat-card-header>
         <mat-card-title>
@@ -99,7 +98,7 @@
       <mat-card-content class="card-content">
         <div>
           <app-individual-table
-            [tableData]='data.individualCases'
+            [tableData]='individualCases$ | async'
           ></app-individual-table>
         </div>
       </mat-card-content>
@@ -128,4 +127,3 @@
     </mat-toolbar-row>
   </mat-toolbar>
 </footer>
-</div>
