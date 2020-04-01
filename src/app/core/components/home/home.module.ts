@@ -16,10 +16,13 @@ import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { IndividualTableModule } from '../individual-table/individual-table.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BarChartComponent } from './bar-chart.component';
+import { AreaChartComponent } from './new-area-chart.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, BarChartComponent, AreaChartComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -34,11 +37,12 @@ import { IndividualTableModule } from '../individual-table/individual-table.modu
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    NgxChartsModule,
     RouterModule,
     IndividualTableModule,
     HttpClientModule,
   ],
-  providers: [Covid19DataStoreService],
+  providers: [Covid19DataStoreService, BarChartComponent, AreaChartComponent],
   exports: [HomeComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -40,21 +40,6 @@ export class Covid19DataStoreService {
         this.loadCovid19SourceData().subscribe();
     }
 
-    getCovid19SourceData(): Observable<Covid19SourceData> {
-        const httpHeaders = new HttpHeaders()
-            .set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT')
-            .set('Access-Control-Allow-Origin', '*')
-            .set('Content-Type', 'application/json');
-
-        return this.http.get(this.DataSourceURL, {headers: httpHeaders}).pipe(
-            take(1),
-            map((res: DataSourceResponse) => {
-                const data = new Covid19SourceData(res);
-                return data;
-            })
-        );
-    }
-
     loadCovid19SourceData(): Observable<DataSourceResponse> {
         const httpHeaders = new HttpHeaders()
             .set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT')
