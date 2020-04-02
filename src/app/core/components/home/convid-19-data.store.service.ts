@@ -18,6 +18,7 @@ export class Covid19DataStoreService {
     private readonly lastUpdate$$ = new BehaviorSubject<string>('');
     private readonly totalCases$$ = new BehaviorSubject<TotalCases>(null);
     private readonly cumulativeCases$$ = new BehaviorSubject<CumulativeCases[]>([]);
+    private readonly newCases$$ = new BehaviorSubject<CumulativeCases[]>([]);
     private readonly dailyCases$$ = new BehaviorSubject<CumulativeCases[]>([]);
     private readonly casesByProvince$$ = new BehaviorSubject<CasesByProvince[]>([]);
     private readonly deathsByProvince$$ = new BehaviorSubject<ProvincesData>(null);
@@ -27,6 +28,7 @@ export class Covid19DataStoreService {
     casePerPopulation$: Observable<ProvincesData> = this.casePerPopulation$$.asObservable();
     lastUpdate$: Observable<string> = this.lastUpdate$$.asObservable();
     totalCases$: Observable<TotalCases> = this.totalCases$$.asObservable();
+    newCases$: Observable<CumulativeCases[]> = this.newCases$$.asObservable();
     cumulativeCases$: Observable<CumulativeCases[]> = this.cumulativeCases$$.asObservable();
     dailyCases$: Observable<CumulativeCases[]> = this.dailyCases$$.asObservable();
     casesByProvince$: Observable<CasesByProvince[]> = this.casesByProvince$$.asObservable();
@@ -52,12 +54,14 @@ export class Covid19DataStoreService {
                 this.casePerPopulation$$.next(this.formatProvinceCases(res.casePerPopulation));
                 this.lastUpdate$$.next(res.lastUpdate);
                 this.totalCases$$.next(this.formatTotalCases(res.totalCases));
+                this.newCases$$.next(this.formatNewCases(res.cumulativeCases));
                 this.cumulativeCases$$.next(this.formatCumulativeCases(res.cumulativeCases));
                 this.dailyCases$$.next(this.formatCumulativeCases(res.dailyCases));
                 this.casesByProvince$$.next(this.formateCasesByProvince(res.casesByProvince));
                 this.deathsByProvince$$.next(this.formatProvinceCases(res.deathsByProvince));
                 this.individualCases$$.next(this.formatIndividualCases(res.individualCases));
                 this.totalCaseProvince$$.next(this.formatTotalCaseProvince(res.totalCaseProvince));
+
             })
         );
     }
@@ -96,6 +100,17 @@ export class Covid19DataStoreService {
     }
 
     formatCumulativeCases(dataList: any[]): CumulativeCases[] {
+        let cumulativeCount = 0;
+        return dataList.map(d => {
+            cumulativeCount = cumulativeCount + Number(d.totalGCase || '0');
+            return {
+                totalGCase: cumulativeCount,
+                dte: new Date(d.dte)
+            } as CumulativeCases;
+        });
+    }
+
+    formatNewCases(dataList: any[]): CumulativeCases[]{
         return dataList.map(d => ({
             totalGCase: Number(d.totalGCase || '0'),
             dte: new Date(d.dte)

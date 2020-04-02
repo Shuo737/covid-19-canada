@@ -19,7 +19,7 @@ export class BarChartComponent implements OnInit {
     xAxisLabel = 'Province';
     showYAxisLabel = true;
     yAxisLabel = 'Population';
-    animations = true;
+    animations = false;
     legendTitle = 'Total Cases & Deaths';
 
     constructor() {}

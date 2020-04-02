@@ -54,10 +54,11 @@
       <mat-card-content class="card-content">
         <div class="page-content debrief-div" *ngIf="(cumulativeCases$ | async)?.length !== 0">
           <app-area-chart
-            [newCases]="cumulativeCases$ | async"
+            [newCases]="newCases$ | async"
+            [cumulativeCases]="cumulativeCases$ | async"
           ></app-area-chart>
         </div>
-        </mat-card-content>
+      </mat-card-content>
     </mat-card>
   </div>
 </div>
@@ -110,8 +111,14 @@
     </mat-card>
   </div>
 </div>
+<div class="page-content debrief-div">
+  <button mat-icon-button (click)="showIndividualTable()">
+    <mat-icon>table_chart</mat-icon> Show Individual Cases Details
+  </button>
+</div>
+
 <!-- Individual data table -->
-<!-- <div class="page-content debrief-div">
+<div class="page-content debrief-div" *ngIf="showIndividualTable$ | async">
   <div *ngIf="(individualCases$ | async)?.length !== 0">
     <mat-card class="card-style">
       <mat-card-header>
@@ -128,7 +135,7 @@
       </mat-card-content>
     </mat-card>
   </div>
-</div> -->
+</div>
 
 <div class="page-content debrief-div">
   

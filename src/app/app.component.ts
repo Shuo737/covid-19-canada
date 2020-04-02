@@ -9,16 +9,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
-    // private logger: LoggerService
   ) {}
 
   public ngOnInit() {
-    console.log('AppComponent: ngOnInit()');
-    // this.logger.info('AppComponent: ngOnInit()');
   }
 
   public ngOnDestroy() {
-    // this.logger.info('AppComponent: ngOnDestroy()');
   }
 
 }

@@ -8,18 +8,19 @@ import { CumulativeCases } from './convid-19-source-data';
 })
 export class AreaChartComponent implements OnInit {
     @Input() newCases: CumulativeCases[];
+    @Input() cumulativeCases: CumulativeCases[];
     multi: any[];
     view: any[] = [1000, 800];
 
     // options
     legend = true;
     showLabels = true;
-    animations = true;
+    animations = false;
     xAxis = true;
     yAxis = true;
-    showYAxisLabel = true;
-    showXAxisLabel = true;
-    xAxisLabel = 'Year';
+    showYAxisLabel = false;
+    showXAxisLabel = false;
+    xAxisLabel = 'Date';
     yAxisLabel = 'Population';
     timeline = true;
 
@@ -31,27 +32,16 @@ export class AreaChartComponent implements OnInit {
     }
 
     formatChartData(): any[] {
-        if (!this.newCases) {
+        if (!this.newCases || !this.cumulativeCases) {
             return [];
         }
-
-        let cumulativeCount = 0;
-        const cumulativeCases: CumulativeCases[] = [];
-
-        this.newCases.forEach(c => {
-            cumulativeCount = cumulativeCount + c.totalGCase;
-            cumulativeCases.push({
-                totalGCase: cumulativeCount,
-                dte: c.dte
-            });
-        });
 
         return [{
             name: 'New Cases',
             series: this.newCases.map(c => ({name: this.formateDateString(c.dte), value: c.totalGCase}))
         }, {
             name: 'Cumulative Cases',
-            series: cumulativeCases.map(c => ({name: this.formateDateString(c.dte), value: c.totalGCase}))
+            series: this.cumulativeCases.map(c => ({name: this.formateDateString(c.dte), value: c.totalGCase}))
         }];
     }
 

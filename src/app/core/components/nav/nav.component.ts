@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { HOME, SOLUTIONS_PRODUCTS, CLIENTS_PARTNERS, ABOUT } from '../../../urls';
+import { HOME, INDIVIDUAL_DETAIL, ABOUT } from '../../../urls';
 
 const debriefPhotoPath = 'assets/images/GeoAI.jpg';
 @Component({
@@ -11,8 +11,7 @@ const debriefPhotoPath = 'assets/images/GeoAI.jpg';
 export class NavComponent implements OnInit {
   sidenav: MatSidenav;
   readonly homeUrl = `${HOME}`;
-  readonly solutionsUrl = `/${SOLUTIONS_PRODUCTS}`;
-  readonly clientsUrl = `/${CLIENTS_PARTNERS}`;
+  readonly detailUrl = `/${INDIVIDUAL_DETAIL}`;
   readonly about = `/${ABOUT}`;
 
   readonly debriefPhotoPath = `${debriefPhotoPath}`;

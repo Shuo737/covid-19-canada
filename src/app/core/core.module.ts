@@ -10,8 +10,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HomeModule } from './components/home/home.module';
-import { ProductsSolutionsModule } from './components/products_solutions/products-solutions.module';
-import { ClientsPartnersModule } from './components/clients-partners/clients-partners.module';
 import { AboutModule } from './components/about/about.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { IndividualTableModule } from './components/individual-table/individual-table.module';
@@ -31,8 +29,6 @@ import { IndividualTableModule } from './components/individual-table/individual-
     RouterModule,
     IndividualTableModule,
     HomeModule,
-    ProductsSolutionsModule,
-    ClientsPartnersModule,
     AboutModule,
   ],
   exports: [NavigationBarComponent, NavComponent]

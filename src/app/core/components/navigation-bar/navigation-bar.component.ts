@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HOME, SOLUTIONS_PRODUCTS, CLIENTS_PARTNERS, ABOUT } from 'src/app/urls';
+import { HOME, INDIVIDUAL_DETAIL, ABOUT } from 'src/app/urls';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -11,8 +11,7 @@ export class NavigationBarComponent implements OnInit {
   triggerSearchInput: boolean = false;
 
   readonly homeUrl = `${HOME}`;
-  readonly solutionsUrl = `/${SOLUTIONS_PRODUCTS}`;
-  readonly clientsUrl = `/${CLIENTS_PARTNERS}`;
+  readonly detailsUrl = `/${INDIVIDUAL_DETAIL}`;
   readonly aboutUrl = `/${ABOUT}`;
 
   constructor() { }

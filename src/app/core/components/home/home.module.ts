@@ -19,6 +19,7 @@ import { IndividualTableModule } from '../individual-table/individual-table.modu
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BarChartComponent } from './bar-chart.component';
 import { AreaChartComponent } from './new-area-chart.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AreaChartComponent } from './new-area-chart.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatTabsModule,
     NgxChartsModule,
     RouterModule,
     IndividualTableModule,
