@@ -26,7 +26,6 @@ export class BarChartComponent implements OnInit {
 
     ngOnInit(): void {
         const multi = this.formatChartData();
-        Object.assign(this, { multi });
     }
 
     formatChartData(): any[] {

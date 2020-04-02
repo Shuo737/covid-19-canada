@@ -27,8 +27,9 @@ export class AreaChartComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
+        console.log(this.newCases);
+        console.log(this.cumulativeCases);
         const data = this.formatChartData();
-        Object.assign(this, { data });
     }
 
     formatChartData(): any[] {
