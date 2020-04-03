@@ -28,6 +28,14 @@ class SourceData:
         self.individualCases = individualCases
         self.totalCaseProvince = totalCaseProvince
 
+        
+def exportCasesPerPopulation():
+    fieldName = []
+    with open('cases-per-population-table.csv', 'w', newline='') as csvfile:
+        regionWriter = csv.DictWriter(csvfile, fieldnames=RegionFieldNames)
+
+
+
 def main():
     response = requests.get(url=DataSourceURL)
     data = response.json()
