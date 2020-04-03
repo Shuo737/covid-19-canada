@@ -3,7 +3,7 @@ api_version: 1
 threadsafe: true
 handlers:
 - url: /
- static_files: GeoAI/index.html
- upload: <GeoAI>/index.html
+  static_files: GeoAI/index.html
+  upload: GeoAI/index.html
 - url: /
-static_dir: <GeoAI>
+  static_dir: GeoAI
